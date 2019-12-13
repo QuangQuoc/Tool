@@ -19,7 +19,7 @@ def main():
     pathDirFacebook = fileDirWin.parents[0].as_posix()
     #Read data from excel
     dataFileName = str(pathDirFacebook) + "/01. Data/" + "nhom_share.xlsx"
-    #df = pd.read_excel(dataFileName)
+    df = pd.read_excel(dataFileName)
     # Your Facebook account user and password
     # Doc User tu file excel
     usr = "copmapmap22@gmail.com"
@@ -77,12 +77,13 @@ def main():
     ]
     sleep(20)
     while(1):
-        #for group in df['Group_copMapMap']:
-        for group in group_links:
+        for group in df['Group_copMapMap']:
+        #for group in group_links:
             try:
-                print(group)
+                groupId = str(int(group))
+                print(groupId)
                 # Go to the Facebook Group
-                driver.get("https://mbasic.facebook.com/groups/"+str(group))
+                driver.get("https://mbasic.facebook.com/groups/"+str(groupId))
                 # Tìm khung đăng bài trong group
                 post_box=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div[1]/div[3]/form/table/tbody/tr/td[2]/div/textarea")
                 post_box.click()
@@ -103,7 +104,7 @@ def main():
                 print(x)
                 sleep(x)
             except:
-                print("Group loi " + str(group))
+                print("Group loi " + str(groupId))
                 print("------------------------")
             # driver.close()
  

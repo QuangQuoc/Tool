@@ -15,6 +15,7 @@ def main():
     dataFileName = "Data/" + "nhom_share.xlsx"
     #df = pd.read_excel(dataFileName)
     # Your Facebook account user and password
+    # Doc User tu file excel
     usr = "copmapmap22@gmail.com"
     pwd = "Copmapmap_@222"
     cookieFileName = "Cookies/" + usr + "cookies.pkl"

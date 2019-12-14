@@ -22,8 +22,8 @@ def main():
     #df = pd.read_excel(dataFileName)
     # Your Facebook account user and password
     # Doc User tu file excel
-    usr = "copmapmap22@gmail.com"
-    pwd = "Copmapmap_@222"
+    usr = "hanhnhan7891@gmail.com"
+    pwd = "Hanhnhan_@7891987"
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
     message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
     #chromedriver_path = "E:/05. Software/Chrome/chromedriver.exe"
@@ -43,6 +43,7 @@ def main():
  
     # Go to facebook.com
     driver.get("https://www.facebook.com/")
+    
     # Login using cookies
     try:
         cookies = pickle.load(open(cookieFileName, "rb"))
@@ -99,7 +100,7 @@ def main():
                 print("Share OK")
                 print("------------------------")
                 #random sleep 10p->15p
-                x=random.randint(200,300)
+                x=random.randint(400,600)
                 print(x)
                 sleep(x)
             except:

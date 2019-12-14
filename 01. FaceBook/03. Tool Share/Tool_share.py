@@ -20,10 +20,15 @@ def main():
     #Read data from excel
     dataFileName = str(pathDirFacebook) + "/01. Data/" + "nhom_share.xlsx"
     df = pd.read_excel(dataFileName)
+    
     # Your Facebook account user and password
-    # Doc User tu file excel
     usr = "hanhnhan7891@gmail.com"
     pwd = "Hanhnhan_@7891987"
+    
+    # Set Thời gian random chờ đăng bài(giây)
+    Tg1 = 400
+    Tg2 = 500
+
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
     message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
     #chromedriver_path = "E:/05. Software/Chrome/chromedriver.exe"
@@ -78,34 +83,48 @@ def main():
     ]
     sleep(20)
     while(1):
-        for group in df['Group_copMapMap']:
+        #Số bài đã được đăng
+        daDang = 0
+        randomSoBaiDaDang = random.randint(5,10)
+        for group in df[usr]:
         #for group in group_links:
             try:
                 groupId = str(int(group))
-                print(groupId)
+                print("Đăng bài vào nhóm: " + groupId)
+                
                 # Go to the Facebook Group
-                driver.get("https://mbasic.facebook.com/groups/"+str(groupId))
-                # Tìm khung đăng bài trong group
-                post_box=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div[1]/div[3]/form/table/tbody/tr/td[2]/div/textarea")
+                driver.get("https://mbasic.facebook.com/composer/mbasic/?c_src=share&referrer=feed&sid=113499553458620&m=group&target="+str(groupId))
+                
+                # Tìm nút chia sẽ trong group
+                post_box=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/table/tbody/tr/td/div/form/input[17]")
+                sleep(3)
                 post_box.click()
-                sleep(2)
+                
                 
                 #send link share
-                ActionChains(driver).send_keys(message).perform()
+                #ActionChains(driver).send_keys(message).perform()
     
                 # Tìm nút đăng bài trong group
-                buttons = driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div[1]/div[3]/form/table/tbody/tr/td[3]/div/input")
-                sleep(2)
-                buttons.click()
+                #buttons = driver.find_element_by_xpath("/html/body/div/div/div[2]/div/div[1]/div[3]/form/table/tbody/tr/td[3]/div/input")
+                #sleep(2)
+                #buttons.click()
 
                 print("Share OK")
                 print("------------------------")
-                #random sleep 10p->15p
-                x=random.randint(400,600)
-                print(x)
-                sleep(x)
+                
+                #Time random sleep Tg1 -> Tg2 
+                daDang+=1
+                if daDang == randomSoBaiDaDang:
+                    randomSoBaiDaDang = random.randint(5,10) + daDang
+                    TgCho = random.randint(500, 700)
+                    print("")
+                else:
+                    TgCho=random.randint(Tg1, Tg2)
+                
+                print("Thời gian chờ: " + str(TgCho))
+                sleep(TgCho)
             except:
-                print("Group loi " + str(groupId))
+                print("Group loi " + groupId)
                 print("------------------------")
             # driver.close()
  

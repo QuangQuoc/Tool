@@ -22,12 +22,12 @@ def main():
     df = pd.read_excel(dataFileName)
     
     # Your Facebook account user and password
-    usr = "hanhnhan7891@gmail.com"
-    pwd = "Hanhnhan_@7891987"
+    usr = "hongnguyen12229@gmail.com"
+    pwd = "Hongnguyen_@122292221"
     
     # Set Thời gian random chờ đăng bài(giây)
-    Tg1 = 400
-    Tg2 = 500
+    Tg1 = 500
+    Tg2 = 700
 
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
     message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
@@ -116,8 +116,8 @@ def main():
                 daDang+=1
                 if daDang == randomSoBaiDaDang:
                     randomSoBaiDaDang = random.randint(5,10) + daDang
-                    TgCho = random.randint(500, 700)
-                    print("")
+                    TgCho = random.randint(700, 800)
+                    print("Tạm dừng khi đăng được: "+ daDang)
                 else:
                     TgCho=random.randint(Tg1, Tg2)
                 

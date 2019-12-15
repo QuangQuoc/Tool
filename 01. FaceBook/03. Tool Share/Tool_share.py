@@ -117,7 +117,7 @@ def main():
                 if daDang == randomSoBaiDaDang:
                     randomSoBaiDaDang = random.randint(5,10) + daDang
                     TgCho = random.randint(500, 700)
-                    print("")
+                    print("Chờ sau khi đã đăng được: "+daDang)
                 else:
                     TgCho=random.randint(Tg1, Tg2)
                 

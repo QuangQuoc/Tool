@@ -22,12 +22,18 @@ def main():
     df = pd.read_excel(dataFileName)
     
     # Your Facebook account user and password
-    usr = "hongnguyen12229@gmail.com"
-    pwd = "Hongnguyen_@122292221"
+    usr = "hanhnhan7891@gmail.com"
+    pwd = "Hanhnhan_@7891987"
+    #usr = "vinhquang13531@gmail.com"
+    #pwd = "Vinhquang_@13531"
     
     # Set Thời gian random chờ đăng bài(giây)
-    Tg1 = 500
+    Tg1 = 600
     Tg2 = 700
+
+    #Dừng khi được đăng
+    daDang = 0
+    randomSoBaiDaDang = random.randint(5,8)
 
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
     message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
@@ -81,16 +87,14 @@ def main():
         "phongtrodanang/",
         "chovieclamdanang/"
     ]
-    sleep(20)
+    sleep(10)
+    
     while(1):
-        #Số bài đã được đăng
-        daDang = 0
-        randomSoBaiDaDang = random.randint(5,10)
         for group in df[usr]:
         #for group in group_links:
             try:
                 groupId = str(int(group))
-                print("Đăng bài vào nhóm: " + groupId)
+                print("Share bài vào nhóm: " + groupId)
                 
                 # Go to the Facebook Group
                 driver.get("https://mbasic.facebook.com/composer/mbasic/?c_src=share&referrer=feed&sid=113499553458620&m=group&target="+str(groupId))
@@ -109,15 +113,20 @@ def main():
                 #sleep(2)
                 #buttons.click()
 
-                print("Share OK")
+                print("Share bài OK")
                 print("------------------------")
                 
                 #Time random sleep Tg1 -> Tg2 
                 daDang+=1
+                print("Đã share: " + str(daDang))
+                print("Tạm dừng khi share được: " + str(randomSoBaiDaDang))
+
                 if daDang == randomSoBaiDaDang:
-                    randomSoBaiDaDang = random.randint(5,10) + daDang
-                    TgCho = random.randint(700, 800)
-                    print("Tạm dừng khi đăng được: "+ daDang)
+                    randomSoBaiDaDang = random.randint(5,8) + daDang
+                    TgCho = random.randint(1200, 1500)
+                    Tg1 = random.randint(500,599)
+                    Tg2 = random.randint(600,700)
+                    print("Tạm dừng khi share được: "+ str(daDang))
                 else:
                     TgCho=random.randint(Tg1, Tg2)
                 
@@ -126,6 +135,7 @@ def main():
             except:
                 print("Group loi " + groupId)
                 print("------------------------")
+                sleep(500)
             # driver.close()
  
 if __name__ == '__main__':

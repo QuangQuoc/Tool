@@ -15,7 +15,7 @@ def main():
 
     # Optionally, login or load session
     L.login(userName, passWord)        # (login)
-    L.interactive_login(userName)      # (ask password on terminal)
+    #L.interactive_login(userName)      # (ask password on terminal)
     #L.load_session_from_file(userName) # (load session created w/
                                     #  `instaloader -l USERNAME`
     # get data from a post

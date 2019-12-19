@@ -22,10 +22,10 @@ def main():
     df = pd.read_excel(dataFileName)
     
     # Your Facebook account user and password
-    usr = "hanhnhan7891@gmail.com"
-    pwd = "Hanhnhan_@7891987"
-    #usr = "vinhquang13531@gmail.com"
-    #pwd = "Vinhquang_@13531"
+    #usr = "hanhnhan7891@gmail.com"
+    #pwd = "Hanhnhan_@7891987"
+    usr = "vinhquang13531@gmail.com"
+    pwd = "Vinhquang_@13531"
     
     # Set Thời gian random chờ đăng bài(giây)
     Tg1 = 600
@@ -36,7 +36,8 @@ def main():
     randomSoBaiDaDang = random.randint(5,8)
 
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
-    message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
+    message = "https://www.facebook.com/totokids.quanaotreem/posts/120529436088965" #áo dài thần tài bé gái
+    # https://www.facebook.com/totokids.quanaotreem/posts/113499553458620 : áo dài bé trai
     #chromedriver_path = "E:/05. Software/Chrome/chromedriver.exe"
     chromedriver_path = str(pathDirTool) + '/03. Software/Chrome/chromedriver.exe'
     chrome_options = webdriver.ChromeOptions()
@@ -97,7 +98,7 @@ def main():
                 print("Share bài vào nhóm: " + groupId)
                 
                 # Go to the Facebook Group
-                driver.get("https://mbasic.facebook.com/composer/mbasic/?c_src=share&referrer=feed&sid=113499553458620&m=group&target="+str(groupId))
+                driver.get("https://mbasic.facebook.com/composer/mbasic/?c_src=share&referrer=feed&sid=120529436088965&m=group&target="+str(groupId)) #id áo dài: 113499553458620
                 
                 # Tìm nút chia sẽ trong group
                 post_box=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/table/tbody/tr/td/div/form/input[17]")

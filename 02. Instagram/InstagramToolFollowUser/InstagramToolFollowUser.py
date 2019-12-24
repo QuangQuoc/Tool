@@ -38,7 +38,8 @@ def main():
     #- Giới hạn số like của 1 bài viết muốn lấy Liker và Commenter
     minLike = 10 
     #users = GetUserFromFile(usersFile, userField)
-
+    #----------------------------------Login--------------------------------------
+    bot.login(username=userName, password=passWord, use_cookie=True, cookie_fname=cookieFileName)
     getUsers = GetUsers.GetUsers(bot)
     
     #---------------------------------Follow--------------------------------------
@@ -53,8 +54,6 @@ def main():
         users = getUsers.GetUsersFromFile(usersFile, userNameField, userIdField)
     # Follow user
     if len(users) > 0:
-        #----------------------------------Login--------------------------------------
-        bot.login(username=userName, password=passWord, use_cookie=True, cookie_fname=cookieFileName)
         for i in range(0, len(users)):
             bot.follow(users[i].userId)
             # Lưu User vào file excel

@@ -1,4 +1,5 @@
 import User
+from time import sleep
 
 class GetUsers(object):
     """description of class"""
@@ -74,6 +75,7 @@ class GetUsers(object):
         list(dict.fromkeys(usersId))
         for userId in usersId:
             user = self.GetUserFromUserId(userId)
+            sleep(5)
             users.append(user)
         return users
 

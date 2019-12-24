@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CsvSupport.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FollowUsers.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GetUsers.py">
       <SubType>Code</SubType>
     </Compile>

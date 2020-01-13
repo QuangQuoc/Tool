@@ -22,14 +22,16 @@ def main():
     df = pd.read_excel(dataFileName)
     
     # Your Facebook account user and password
-    usr = "hanhnhan7891@gmail.com"
-    pwd = "Hanhnhan_@7891987"
+    usr = "100045332020378"
+    pwd = "quocsang199698"
     #usr = "vinhquang13531@gmail.com"
     #pwd = "Vinhquang_@13531"
     
     # Set Thời gian random chờ đăng bài(giây)
     Tg1 = 600
     Tg2 = 700
+
+    PROXY = "192.168.99.100:3127"
 
     #Dừng khi được đăng
     daDang = 0
@@ -40,6 +42,7 @@ def main():
     #chromedriver_path = "E:/05. Software/Chrome/chromedriver.exe"
     chromedriver_path = str(pathDirTool) + '/03. Software/Chrome/chromedriver.exe'
     chrome_options = webdriver.ChromeOptions()
+    #chrome_options.add_argument('--proxy-server=%s' % PROXY)
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("start-maximized")

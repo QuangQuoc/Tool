@@ -1,6 +1,6 @@
-Create table Account 
+Create table Accounts 
 (
-	ID int,
+	ID int NOT NULL,
     Status boolean default false,
     UserName varchar(255) Not null,
     UserId varchar(255),
@@ -10,21 +10,24 @@ Create table Account
 
 Create table Cookies
 (
-	Id int,
+	ID int,
     Status boolean default false,
-    Data varchar(65535),
-    AccountId int
+    Data Text(65535),
+    AccountId int,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (AccountId) REFERENCES Account(ID)
 );
 
 create table NewFeedHistory 
 (
-	Id int,
+	ID int,
     AccountId int,
     RunTime datetime
 );
 
-create table AddFriendHistory(
-	Id int,
+create table AddFriendHistory
+(
+	ID int,
     AccountId int,
     AddTime datetime,
     AddFriendTypeId int
@@ -33,10 +36,11 @@ create table AddFriendHistory(
 create table AddFriendType 
 (
 	Id int,
-    Type Text(255)
+    KiHieu Varchar(255),
+    Ten Text(255)
 );
 
-create table Regulations
+create table Regulation
 (
 	Id int,
     ActionId int,
@@ -44,6 +48,25 @@ create table Regulations
     WorkingTime text(1024),
     Priority int,
     LimitedTime datetime
+);
+
+Create table Groups
+(
+	ID int,
+    Topic text(1024),
+    Status boolean default false,
+    Name text(1024),
+    Quality int,
+    Type int
+);
+
+Create table AccountGroup
+(
+	ID int,
+    GroupId int,
+    UserId int,
+    Status int,
+    RequestTime Datetime
 );
 
 Create table Action
@@ -55,7 +78,34 @@ Create table Action
 
 ALTER DATABASE FacebookManagement CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
-ALTER TABLE AddFriendType CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE Account CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+# PRIMARY KEY
+ALTER TABLE Accounts
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE Cookies
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE NewFeedHistory
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE AddFriendHistory
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE Regulation
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE Groups
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE AccountGroup
+ADD PRIMARY KEY (ID);
+
+ALTER TABLE Action
+ADD PRIMARY KEY (ID);
+
+
+
+#ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

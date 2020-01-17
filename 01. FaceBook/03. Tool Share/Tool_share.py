@@ -370,8 +370,8 @@ def like_cmt(postId):
     print("------------------------------------------------------------")
 
 #3121
-#login("100045332020378", "quocsang199698") #459470627407885 #184085025268369
-login("nguyen.robert.5680", "quocsang199698") #1103048153082966
+login("100045332020378", "quocsang199698") #459470627407885 #184085025268369 #đặng trưởng phạm
+#login("nguyen.robert.5680", "quocsang199698") #1103048153082966
 #login("minhquoc.truong.927", "quocsang199698") #108757516583030
 #login("ho.thanhtuyen.98", "quocsang199698") #256506321136779
 #-------
@@ -392,15 +392,15 @@ login("nguyen.robert.5680", "quocsang199698") #1103048153082966
 #login("thienhieu.nguyenthi", "quocsang199698") #1573166649377023
 
 #driver.get("https://www.facebook.com/")
-luot_newFeed(10)
+#luot_newFeed(10)
 #like_cmt(837285500065805)
-a = add_check_group(1103048153082966)
-b = share_group(1103048153082966, 2493773520877849, a)
+a = add_check_group(368698476630471)
+#b = share_group(1103048153082966, 2493773520877849, a)
 #print(a)
-sleep(100)
-ket_ban_theo_goi_y(5,180)
-up_cmt(b)
-chap_nhan_ket_ban(5,30)
+#sleep(100)
+#ket_ban_theo_goi_y(5,180)
+#up_cmt(b)
+#chap_nhan_ket_ban(5,30)
 
 
 

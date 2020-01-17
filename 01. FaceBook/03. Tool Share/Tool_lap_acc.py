@@ -16,7 +16,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
  
-#PROXY = "192.168.1.2:3131"
+PROXY = "192.168.99.100:3121"
 fileDir = os.path.dirname(os.path.realpath('__file__'))
 fileDirWin = PureWindowsPath(fileDir)
 pathDirTool = fileDirWin.parents[1].as_posix()
@@ -24,7 +24,7 @@ pathDirFacebook = fileDirWin.parents[0].as_posix()
 
 chromedriver_path = str(pathDirTool) + '/03. Software/Chrome/chromedriver.exe'
 chrome_options = webdriver.ChromeOptions()
-#chrome_options.add_argument('--proxy-server=%s' % PROXY)
+chrome_options.add_argument('--proxy-server=%s' % PROXY)
 chrome_options.add_experimental_option("detach", True)
 chrome_options.add_argument("--disable-infobars")
 chrome_options.add_argument("start-maximized")
@@ -196,7 +196,7 @@ a = check_api_simthue(api_key = api_key, n = 1)
 b = create_request(api_key = api_key, service_id = 9, status = a)
 c = get_numberphone(api_key = api_key, request_id = b)
 
-create_account(gioiTinh = 'nu', sdt = c)
+#create_account(gioiTinh = 'nu', sdt = c)
 get_sms(api_key = api_key, request_id = b)
-xac_nhan_ma_code(get_sms)
+#xac_nhan_ma_code(get_sms)
 

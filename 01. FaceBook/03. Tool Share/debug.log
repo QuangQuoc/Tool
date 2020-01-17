@@ -239,3 +239,5 @@
 [0117/202611.102:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0117/202611.103:ERROR:exception_snapshot_win.cc(98)] thread ID 5380 not found in process
 >>>>>>> Feature-InstaTool-FollowUser
+[0117/221327.029:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0117/221327.031:ERROR:exception_snapshot_win.cc(98)] thread ID 8880 not found in process

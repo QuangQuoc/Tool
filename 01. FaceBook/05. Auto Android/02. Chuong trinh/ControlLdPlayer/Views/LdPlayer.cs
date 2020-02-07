@@ -60,5 +60,44 @@ namespace ControlLdPlayer.Views
         {
             controller.PropertySetting();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUnInstall_Click(object sender, EventArgs e)
+        {
+            string packageName = tbxPackage.Text.ToString();
+            controller.UnInstallApp(packageName);
+        }
+
+        private void LdPlayer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInstall_Click(object sender, EventArgs e)
+        {
+            string packageName = tbxPackage.Text.ToString();
+            controller.InstallApp(packageName);
+        }
+
+        private void btnRunApp_Click(object sender, EventArgs e)
+        {
+            string packageName = tbxPackage.Text.ToString();
+            controller.UnInstallApp(packageName);
+        }
+
+        private void btnKillApp_Click(object sender, EventArgs e)
+        {
+            string packageName = tbxPackage.Text.ToString();
+            controller.KillApp(packageName);
+        }
     }
 }

@@ -22,6 +22,8 @@ namespace ControlLdPlayer.ViewModels
 
         public string Imei { get; set; }
 
+        public string PackageName { get; set; }
+
         public LdPlayerViewModel(LdPlayer _form)
         {
             form = _form;
@@ -59,6 +61,11 @@ namespace ControlLdPlayer.ViewModels
             {
                 Imei = imei;
             }
+        }
+
+        public void ReadPackgeName()
+        {
+            PackageName = form.tbxPackage.Text;
         }
     }
 }

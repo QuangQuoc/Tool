@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnKillApp = new System.Windows.Forms.Button();
+            this.btnRunApp = new System.Windows.Forms.Button();
+            this.btnUnInstall = new System.Windows.Forms.Button();
+            this.btnInstall = new System.Windows.Forms.Button();
+            this.tbxPackage = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnQuitAll = new System.Windows.Forms.Button();
-            this.btnQuit = new System.Windows.Forms.Button();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbxName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSetting = new System.Windows.Forms.Button();
             this.tbxImei = new System.Windows.Forms.TextBox();
@@ -45,13 +47,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbxResolution = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnQuitAll);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnQuit);
             this.groupBox1.Controls.Add(this.btnRun);
             this.groupBox1.Controls.Add(this.btnCreate);
@@ -59,67 +69,93 @@
             this.groupBox1.Controls.Add(this.tbxName);
             this.groupBox1.Location = new System.Drawing.Point(33, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 189);
+            this.groupBox1.Size = new System.Drawing.Size(466, 304);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CreateLd";
+            this.groupBox1.Text = "ControlLdPlayer";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnKillApp);
+            this.groupBox3.Controls.Add(this.btnRunApp);
+            this.groupBox3.Controls.Add(this.btnUnInstall);
+            this.groupBox3.Controls.Add(this.btnInstall);
+            this.groupBox3.Controls.Add(this.tbxPackage);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(237, 118);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(216, 176);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Application";
+            // 
+            // btnKillApp
+            // 
+            this.btnKillApp.Location = new System.Drawing.Point(137, 87);
+            this.btnKillApp.Name = "btnKillApp";
+            this.btnKillApp.Size = new System.Drawing.Size(61, 23);
+            this.btnKillApp.TabIndex = 5;
+            this.btnKillApp.Text = "Kill App";
+            this.btnKillApp.UseVisualStyleBackColor = true;
+            this.btnKillApp.Click += new System.EventHandler(this.btnKillApp_Click);
+            // 
+            // btnRunApp
+            // 
+            this.btnRunApp.Location = new System.Drawing.Point(63, 87);
+            this.btnRunApp.Name = "btnRunApp";
+            this.btnRunApp.Size = new System.Drawing.Size(58, 23);
+            this.btnRunApp.TabIndex = 4;
+            this.btnRunApp.Text = "Run App";
+            this.btnRunApp.UseVisualStyleBackColor = true;
+            this.btnRunApp.Click += new System.EventHandler(this.btnRunApp_Click);
+            // 
+            // btnUnInstall
+            // 
+            this.btnUnInstall.Location = new System.Drawing.Point(137, 57);
+            this.btnUnInstall.Name = "btnUnInstall";
+            this.btnUnInstall.Size = new System.Drawing.Size(61, 23);
+            this.btnUnInstall.TabIndex = 3;
+            this.btnUnInstall.Text = "UnInstall";
+            this.btnUnInstall.UseVisualStyleBackColor = true;
+            this.btnUnInstall.Click += new System.EventHandler(this.btnUnInstall_Click);
+            // 
+            // btnInstall
+            // 
+            this.btnInstall.Location = new System.Drawing.Point(63, 57);
+            this.btnInstall.Name = "btnInstall";
+            this.btnInstall.Size = new System.Drawing.Size(58, 23);
+            this.btnInstall.TabIndex = 2;
+            this.btnInstall.Text = "Install";
+            this.btnInstall.UseVisualStyleBackColor = true;
+            this.btnInstall.Click += new System.EventHandler(this.btnInstall_Click);
+            // 
+            // tbxPackage
+            // 
+            this.tbxPackage.Location = new System.Drawing.Point(51, 28);
+            this.tbxPackage.Name = "tbxPackage";
+            this.tbxPackage.Size = new System.Drawing.Size(159, 20);
+            this.tbxPackage.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-3, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "PkName";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnQuitAll
             // 
-            this.btnQuitAll.Location = new System.Drawing.Point(212, 115);
+            this.btnQuitAll.Location = new System.Drawing.Point(333, 70);
             this.btnQuitAll.Name = "btnQuitAll";
             this.btnQuitAll.Size = new System.Drawing.Size(53, 23);
             this.btnQuitAll.TabIndex = 6;
             this.btnQuitAll.Text = "Quit All";
             this.btnQuitAll.UseVisualStyleBackColor = true;
             this.btnQuitAll.Click += new System.EventHandler(this.btnQuitAll_Click);
-            // 
-            // btnQuit
-            // 
-            this.btnQuit.Location = new System.Drawing.Point(212, 70);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(53, 23);
-            this.btnQuit.TabIndex = 5;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // btnRun
-            // 
-            this.btnRun.Location = new System.Drawing.Point(133, 70);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(48, 23);
-            this.btnRun.TabIndex = 4;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(48, 70);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(49, 23);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // tbxName
-            // 
-            this.tbxName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxName.Location = new System.Drawing.Point(48, 28);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(217, 26);
-            this.tbxName.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -132,9 +168,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbxResolution);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(384, 29);
+            this.groupBox2.Location = new System.Drawing.Point(9, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 188);
+            this.groupBox2.Size = new System.Drawing.Size(197, 176);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Property Setting";
@@ -142,7 +178,7 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.Location = new System.Drawing.Point(73, 153);
+            this.btnSetting.Location = new System.Drawing.Point(73, 142);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(75, 23);
             this.btnSetting.TabIndex = 8;
@@ -214,17 +250,66 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Resolution ";
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(253, 70);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(49, 23);
+            this.btnQuit.TabIndex = 5;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnRun
+            // 
+            this.btnRun.Location = new System.Drawing.Point(174, 70);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(48, 23);
+            this.btnRun.TabIndex = 4;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(96, 70);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(49, 23);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 23);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tbxName
+            // 
+            this.tbxName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxName.Location = new System.Drawing.Point(48, 28);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(405, 26);
+            this.tbxName.TabIndex = 0;
+            // 
             // LdPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "LdPlayer";
             this.Text = "CreateLdPlayer";
+            this.Load += new System.EventHandler(this.LdPlayer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -250,5 +335,12 @@
         private System.Windows.Forms.Button btnSetting;
         public System.Windows.Forms.TextBox tbxImei;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.TextBox tbxPackage;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnKillApp;
+        private System.Windows.Forms.Button btnRunApp;
+        private System.Windows.Forms.Button btnUnInstall;
+        private System.Windows.Forms.Button btnInstall;
     }
 }

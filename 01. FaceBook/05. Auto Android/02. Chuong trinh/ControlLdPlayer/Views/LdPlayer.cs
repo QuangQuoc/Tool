@@ -73,7 +73,7 @@ namespace ControlLdPlayer.Views
 
         private void btnUnInstall_Click(object sender, EventArgs e)
         {
-            string packageName = tbxPackage.Text.ToString();
+            string packageName = tbxPackageName.Text.ToString();
             controller.UnInstallApp(packageName);
         }
 
@@ -84,19 +84,19 @@ namespace ControlLdPlayer.Views
 
         private void btnInstall_Click(object sender, EventArgs e)
         {
-            string packageName = tbxPackage.Text.ToString();
-            controller.InstallApp(packageName);
+            string fileName = tbxFileApk.Text.ToString();
+            controller.InstallApp(fileName);
         }
 
         private void btnRunApp_Click(object sender, EventArgs e)
         {
-            string packageName = tbxPackage.Text.ToString();
-            controller.UnInstallApp(packageName);
+            string packageName = tbxPackageName.Text.ToString();
+            controller.RunApp(packageName);
         }
 
         private void btnKillApp_Click(object sender, EventArgs e)
         {
-            string packageName = tbxPackage.Text.ToString();
+            string packageName = tbxPackageName.Text.ToString();
             controller.KillApp(packageName);
         }
     }

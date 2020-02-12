@@ -34,7 +34,7 @@
             this.btnRunApp = new System.Windows.Forms.Button();
             this.btnUnInstall = new System.Windows.Forms.Button();
             this.btnInstall = new System.Windows.Forms.Button();
-            this.tbxPackage = new System.Windows.Forms.TextBox();
+            this.tbxFileApk = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnQuitAll = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -52,6 +52,8 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxName = new System.Windows.Forms.TextBox();
+            this.tbxPackageName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,22 +79,24 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tbxPackageName);
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.btnKillApp);
             this.groupBox3.Controls.Add(this.btnRunApp);
             this.groupBox3.Controls.Add(this.btnUnInstall);
             this.groupBox3.Controls.Add(this.btnInstall);
-            this.groupBox3.Controls.Add(this.tbxPackage);
+            this.groupBox3.Controls.Add(this.tbxFileApk);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(237, 118);
+            this.groupBox3.Location = new System.Drawing.Point(233, 118);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(216, 176);
+            this.groupBox3.Size = new System.Drawing.Size(220, 176);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Application";
             // 
             // btnKillApp
             // 
-            this.btnKillApp.Location = new System.Drawing.Point(137, 87);
+            this.btnKillApp.Location = new System.Drawing.Point(137, 139);
             this.btnKillApp.Name = "btnKillApp";
             this.btnKillApp.Size = new System.Drawing.Size(61, 23);
             this.btnKillApp.TabIndex = 5;
@@ -102,7 +106,7 @@
             // 
             // btnRunApp
             // 
-            this.btnRunApp.Location = new System.Drawing.Point(63, 87);
+            this.btnRunApp.Location = new System.Drawing.Point(63, 139);
             this.btnRunApp.Name = "btnRunApp";
             this.btnRunApp.Size = new System.Drawing.Size(58, 23);
             this.btnRunApp.TabIndex = 4;
@@ -112,7 +116,7 @@
             // 
             // btnUnInstall
             // 
-            this.btnUnInstall.Location = new System.Drawing.Point(137, 57);
+            this.btnUnInstall.Location = new System.Drawing.Point(137, 109);
             this.btnUnInstall.Name = "btnUnInstall";
             this.btnUnInstall.Size = new System.Drawing.Size(61, 23);
             this.btnUnInstall.TabIndex = 3;
@@ -122,7 +126,7 @@
             // 
             // btnInstall
             // 
-            this.btnInstall.Location = new System.Drawing.Point(63, 57);
+            this.btnInstall.Location = new System.Drawing.Point(63, 109);
             this.btnInstall.Name = "btnInstall";
             this.btnInstall.Size = new System.Drawing.Size(58, 23);
             this.btnInstall.TabIndex = 2;
@@ -130,21 +134,21 @@
             this.btnInstall.UseVisualStyleBackColor = true;
             this.btnInstall.Click += new System.EventHandler(this.btnInstall_Click);
             // 
-            // tbxPackage
+            // tbxFileApk
             // 
-            this.tbxPackage.Location = new System.Drawing.Point(51, 28);
-            this.tbxPackage.Name = "tbxPackage";
-            this.tbxPackage.Size = new System.Drawing.Size(159, 20);
-            this.tbxPackage.TabIndex = 1;
+            this.tbxFileApk.Location = new System.Drawing.Point(51, 28);
+            this.tbxFileApk.Name = "tbxFileApk";
+            this.tbxFileApk.Size = new System.Drawing.Size(159, 20);
+            this.tbxFileApk.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-3, 31);
+            this.label6.Location = new System.Drawing.Point(0, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "PkName";
+            this.label6.Text = "FileApk";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnQuitAll
@@ -297,11 +301,27 @@
             this.tbxName.Size = new System.Drawing.Size(405, 26);
             this.tbxName.TabIndex = 0;
             // 
+            // tbxPackageName
+            // 
+            this.tbxPackageName.Location = new System.Drawing.Point(51, 60);
+            this.tbxPackageName.Name = "tbxPackageName";
+            this.tbxPackageName.Size = new System.Drawing.Size(159, 20);
+            this.tbxPackageName.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "PkName";
+            // 
             // LdPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(529, 356);
             this.Controls.Add(this.groupBox1);
             this.Name = "LdPlayer";
             this.Text = "CreateLdPlayer";
@@ -336,11 +356,13 @@
         public System.Windows.Forms.TextBox tbxImei;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.TextBox tbxPackage;
+        public System.Windows.Forms.TextBox tbxFileApk;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnKillApp;
         private System.Windows.Forms.Button btnRunApp;
         private System.Windows.Forms.Button btnUnInstall;
         private System.Windows.Forms.Button btnInstall;
+        public System.Windows.Forms.TextBox tbxPackageName;
+        private System.Windows.Forms.Label label7;
     }
 }

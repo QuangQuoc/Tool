@@ -65,7 +65,7 @@ namespace ControlLdPlayer.ViewModels
 
         public void ReadPackgeName()
         {
-            PackageName = form.tbxPackage.Text;
+            PackageName = form.tbxFileApk.Text;
         }
     }
 }

@@ -60,28 +60,28 @@ namespace ControlLdPlayer.Controllers
         public void InstallApp(string fileName)
         {
             view.ReadName();
-            string command = $"installapp --name \"{view.Name}\" --filename {fileName}";
+            string command = $"installapp --name \"{view.Name}\" --filename \"{fileName}\"";
             CmdService.RunLdConsole(command);
         }
 
         public void UnInstallApp(string packageName)
         {
             view.ReadName();
-            string command = $"uninstallapp --name \"{view.Name}\" --packagename {packageName}";
+            string command = $"uninstallapp --name \"{view.Name}\" --packagename \"{packageName}\"";
             CmdService.RunLdConsole(command);
         }
 
         public void RunApp(string packageName)
         {
             view.ReadName();
-            string command = $"runapp --name \"{view.Name}\" --packagename {packageName}";
+            string command = $"runapp --name \"{view.Name}\" --packagename \"{packageName}\"";
             CmdService.RunLdConsole(command);
         }
 
         public void KillApp(string packageName)
         {
             view.ReadName();
-            string command = $"killapp --name \"{view.Name}\" --packagename {packageName}";
+            string command = $"killapp --name \"{view.Name}\" --packagename \"{packageName}\"";
             CmdService.RunLdConsole(command);
         }
     }

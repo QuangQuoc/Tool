@@ -24,10 +24,17 @@ def main():
     df = pd.read_excel(dataFileName)
     
     # Your Facebook account user and password
+<<<<<<< HEAD
+    #usr = "hanhnhan7891@gmail.com"
+    #pwd = "Hanhnhan_@7891987"
+    usr = "vinhquang13531@gmail.com"
+    pwd = "Vinhquang_@13531"
+=======
     usr = "100045332020378"
     pwd = "quocsang199698"
     #usr = "vinhquang13531@gmail.com"
     #pwd = "Vinhquang_@13531"
+>>>>>>> Feature-InstaTool-FollowUser
     
     # Set Thời gian random chờ đăng bài(giây)
     Tg1 = 600
@@ -68,7 +75,12 @@ def login(usr, pwd):
     # lấy cookies ra
     cookieFileName = str(pathDirFacebook) + "/02. Cookies/" + usr + "cookies.pkl"
 <<<<<<< HEAD
+    message = "https://www.facebook.com/totokids.quanaotreem/posts/120529436088965" #áo dài thần tài bé gái
+    # https://www.facebook.com/totokids.quanaotreem/posts/113499553458620 : áo dài bé trai
+=======
+<<<<<<< HEAD
     message = "https://www.facebook.com/totokids.quanaotreem/posts/113499553458620"
+>>>>>>> Feature-InstaTool-FollowUser
     #chromedriver_path = "E:/05. Software/Chrome/chromedriver.exe"
     chromedriver_path = str(pathDirTool) + '/03. Software/Chrome/chromedriver.exe'
     chrome_options = webdriver.ChromeOptions()
@@ -324,6 +336,26 @@ def up_cmt(BaiDaDang):
     except:
         print("LỖI: up_cmt")
     
+<<<<<<< HEAD
+    while(1):
+        for group in df[usr]:
+        #for group in group_links:
+            try:
+                groupId = str(int(group))
+                print("Share bài vào nhóm: " + groupId)
+                
+                # Go to the Facebook Group
+                driver.get("https://mbasic.facebook.com/composer/mbasic/?c_src=share&referrer=feed&sid=120529436088965&m=group&target="+str(groupId)) #id áo dài: 113499553458620
+                
+                # Tìm nút chia sẽ trong group
+                post_box=driver.find_element_by_xpath("/html/body/div/div/div[2]/div/table/tbody/tr/td/div/form/input[17]")
+                sleep(3)
+                post_box.click()
+                
+                
+                #send link share
+                #ActionChains(driver).send_keys(message).perform()
+=======
 def like_cmt(postId):
     print("----------like_cmt: " +str(int(postId))+ " ----------")
     cmt = ["Giá sao bạn", "Ib tư vấn mình với ạ", "Mình ở địa chỉ nào ạ","có ship tận nhà không ạ", "Ib mình với", "Rep ib mình với"]
@@ -380,6 +412,7 @@ a = add_check_group(368698476630471)
 #a=driver.find_element_by_xpath("//*[@id=\"root\"]/div[1]/div[4]")
 #print(a.get_attribute("data-ft")) 116.2 194.4
 
+>>>>>>> Feature-InstaTool-FollowUser
     
 
 

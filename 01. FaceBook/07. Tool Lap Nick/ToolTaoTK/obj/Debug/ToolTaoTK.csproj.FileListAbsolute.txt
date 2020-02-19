@@ -1,0 +1,8 @@
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\bin\Debug\ToolTaoTK.exe.config
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\bin\Debug\ToolTaoTK.exe
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\bin\Debug\ToolTaoTK.pdb
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\obj\Debug\ToolTaoTK.csprojAssemblyReference.cache
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\obj\Debug\ToolTaoTK.Properties.Resources.resources
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\obj\Debug\ToolTaoTK.csproj.GenerateResource.cache
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\obj\Debug\ToolTaoTK.exe
+E:\02. Cong viec\Share_Quoc_Sang\ToolDevelop\Tool\01. FaceBook\07. Tool Lap Nick\ToolTaoTK\obj\Debug\ToolTaoTK.pdb

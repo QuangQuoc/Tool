@@ -1,4 +1,4 @@
-import User
+from Models.User import User
 from time import sleep
 
 class GetUsers(object):

@@ -11,6 +11,9 @@
     <OutputPath>.</OutputPath>
     <Name>InstagramToolFollowUser</Name>
     <RootNamespace>InstagramToolFollowUser</RootNamespace>
+    <InterpreterId>
+    </InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +24,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controllers\FollowController.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CsvSupport.py">
       <SubType>Code</SubType>
     </Compile>
@@ -30,10 +36,55 @@
     <Compile Include="GetUsers.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InstagramToolFollowUser.py" />
-    <Compile Include="User.py">
+    <Compile Include="Infrastructures\Database\DriverMysql.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Infrastructures\Repositories\AccountsRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructures\Repositories\FollowersRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructures\Repositories\FollowsRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructures\Repositories\HashtagRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstagramToolFollowUser.py" />
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Account.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Follow.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Follower.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Hashtag.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\GetUserService.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\User.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Variables\DatabaseVariables.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructures\Database\" />
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Infrastructures\" />
+    <Folder Include="Infrastructures\Repositories\" />
+    <Folder Include="Variables\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

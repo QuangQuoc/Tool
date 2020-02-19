@@ -6,8 +6,12 @@ from enum import Enum, auto
 from time import sleep
 import pandas as pd
 from instabot import Bot
-import User
+from Models.User import User
 import GetUsers
+from Controllers import FollowController as flwCtrl
+from Models.Account import Account
+from Models.Hashtag import Hashtag
+from Infrastructures.Repositories import AccountsRepository as accRepo
 #define
 class USERFROM(Enum):
     HASHTAG = auto()
@@ -16,32 +20,47 @@ class USERFROM(Enum):
     POST = auto()
 
 #-----------------------------Global Variables------------------------------
-followDelayTime = random.randint(100, 120)
-bot = Bot(follow_delay=followDelayTime)
+followDelayTime = random.randint(200, 300)
+#bot = Bot(follow_delay=followDelayTime)
+bot = Bot()
 
 # Main Function => Run file
+
 def main():
     #-----------------------------Input Parameters------------------------------
     #- UserInfo
-    userName = "quang_quoc" 
-    passWord = "quoc@12345"
+    userName = "hoian_handmadetailoring"
+    userId = "29845994399"
+    password = "AB21121995"
     cookieFileName = userName + "_cookie.txt"
+    # Kiểm tra Account đã có chưa
+    acc = accRepo.ReadAccount(userName)
+    if acc == None:
+        acc = Account(userName=userName, password=password, userId=userId)
+        acc = accRepo.AddAccount(acc)
     #- DataInput for GetMethod
-    hashTag = "tuicoi"
+    hashtags = ["hoiantailoring", "hoiancustommade", "customtailoring", "hoiantailor", "Hoianshopping", "travelclothes", "travelclothesforwomen", "hoiantrip"]
+    hashtagName = "hoiancustomtailor"
     locationTag = ""
     postId = ""
     usersFile = ""
     userNameField = ""
     userIdField = ""
+    hashtag = Hashtag(name = hashtagName)
+    
     #- Follow Method
     getUserMethod = USERFROM.HASHTAG
     #- Giới hạn số like của 1 bài viết muốn lấy Liker và Commenter
     minLike = 10 
     #users = GetUserFromFile(usersFile, userField)
     #----------------------------------Login--------------------------------------
-    bot.login(username=userName, password=passWord, use_cookie=True, cookie_fname=cookieFileName)
+    bot.login(username=acc.UserName, password=acc.Password, use_cookie=True, cookie_fname=cookieFileName)
     getUsers = GetUsers.GetUsers(bot)
     
+    #testController
+    for htName in hashtags:
+        htag = Hashtag(name = htName)
+        flwCtrl.FollowHashTag(acc, htag, bot)
     #---------------------------------Follow--------------------------------------
     # Get list User(userId, userName)
     if getUserMethod == USERFROM.HASHTAG:
